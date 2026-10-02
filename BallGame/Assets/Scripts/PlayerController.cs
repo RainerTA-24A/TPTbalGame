@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class PlayerController : MonoBehaviour
 {
@@ -33,7 +34,7 @@ public class PlayerController : MonoBehaviour
         //Restart level
         if (Input.GetKeyDown(KeyCode.R))
         {
-            Application.LoadLevel(Application.loadedLevel);
+            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
         }
         //Quit game
         if (Input.GetKeyDown(KeyCode.Escape))
@@ -57,7 +58,7 @@ public class PlayerController : MonoBehaviour
 
         if(other.gameObject.tag == "danger")
         {
-            Application.LoadLevel(Application.loadedLevel);
+            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
         }
     }
 
